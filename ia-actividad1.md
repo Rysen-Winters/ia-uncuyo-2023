@@ -1,6 +1,6 @@
 # **Inteligencia Artificial I**
 ## **UNCuyo - Facultad de Ingeniería**
-## **Trabajo Práctico 1**
+## **Actividad 1**
 Leonel Castinelli
 
 ### 1. Buscar 2 ejemplos de aplicaciones de inteligencia artificial.

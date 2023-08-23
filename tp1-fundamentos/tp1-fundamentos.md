@@ -3,7 +3,7 @@
 ## **Trabajo Práctico 1 - Fundamentos**
 Leonel Castinelli
 
-### Ejercicio 1: Resumen capítulo 26 (Philosophical foundations) Artificial Intelligence: A Modern Approach.
+### _Ejercicio 1: Resumen capítulo 26 (Philosophical foundations) de Artificial Intelligence: A Modern Approach._
 
 "Cada aspecto del aprendizaje o cualquier otra característica de inteligencia está tan precisamente descrita que se puede crear una máquina que lo simule" - McCarthy, esto se le conoce como Weak AI, que es la característica de que una máquina actúe como si fuera inteligente, bajo este precepto fue fundada la Inteligencia Artificial. En contraste, otra definición, Strong AI, es que la máquina sea realmente capaz de pensar.
 
@@ -35,4 +35,8 @@ Este teorema limita a las IA según J.R. Lucas y las hace inferiores a los human
 
 El "problema de la cualificación" argumenta que el comportamiento humano es tan complejo, que al intentar capturar las reglas lógicas por las cuales se rigen los humanos para tener su comportamiento, las computadoras no podrían capturar todas las reglas ni lograr comportamiento humano. El que propone esta visión de la IA es Hubert Dreyfus.
 
-Dreyfus argumenta que 
+Dreyfus argumenta que la experiencia humana, el humano experto en alguna materia, su conocimiento incluye un grupo de reglas, pero sólo en el "entorno" en el que operan los humanos. Que el proceso de tomar decisiones o reaccionar a situaciones es un proceso inconsciente para el humano. Pero el problemas de este argumento es que no niega la existencia del proceso que lleva a cabo esas actividades lo cual podemos realizar para desarrollar IA. Y proponen (En este caso Hubert Dreyfus teoriza con su hermano Stuart Dreyfus) una red neuronal organizada en una gran "librería de casos" y resaltan varios problemas de esta.
+
+1. Una buena generalización de ejemplos no puede ser lograda sin conocimiento del trasfondo, es decir es imposible incorporar nuevo conocimiento al trasfondo y relacionarlo al proceso neuronal. Desde el punto de vista de los autores (Norvig y Russell) esto implica realizar un rediseño del proceso neuronal para poder aprovecharse de el conocimiento ya disponible de la forma en que otros algoritmos de aprendizaje lo hacen.
+2. El aprendizaje de la red neuronal es una forma de aprendizaje supervisado, donde se requiere la identificación previa de entradas relevantes y salidas correctas, es decir se requiere un "maestro" humano. Pero sin embargo existen los métodos de aprendizaje no supervisado y aprendizaje por refuerzo.
+3. 

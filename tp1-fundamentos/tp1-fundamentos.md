@@ -39,4 +39,5 @@ Dreyfus argumenta que la experiencia humana, el humano experto en alguna materia
 
 1. Una buena generalización de ejemplos no puede ser lograda sin conocimiento del trasfondo, es decir es imposible incorporar nuevo conocimiento al trasfondo y relacionarlo al proceso neuronal. Desde el punto de vista de los autores (Norvig y Russell) esto implica realizar un rediseño del proceso neuronal para poder aprovecharse de el conocimiento ya disponible de la forma en que otros algoritmos de aprendizaje lo hacen.
 2. El aprendizaje de la red neuronal es una forma de aprendizaje supervisado, donde se requiere la identificación previa de entradas relevantes y salidas correctas, es decir se requiere un "maestro" humano. Pero sin embargo existen los métodos de aprendizaje no supervisado y aprendizaje por refuerzo.
-3. 
+3. Los algoritmos de aprendizaje no tienen buen rendimiento si tienen muchas funcionalidades y no se pueden añadir funcionalidades si el conjunto actual de hechos no prueba ser adecuado para dichas funcionalidades. Cuando realmente hay métodos y principios para generar nuevas funcionalidades aunque requiere una cierta cantidad de trabajo.
+4. 

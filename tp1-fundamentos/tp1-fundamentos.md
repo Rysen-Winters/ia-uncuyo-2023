@@ -83,4 +83,4 @@ Isaac Asimov (1942, escritor de ciencia ficción) planteó sus 3 leyes de la rob
 Yudkowsky(2008) detalla como diseñar "IA Amigable" y afirma que la amabilidad debe ser diseñada desde el principio, lo que provee un desafío ya que debe diseñarse IA que pueda evolucionar manteniendo esta característica, obligandola a evolucionar bajo un sistema de verificaciones y balances.
 
 
-![Mapa mental - Bases Filosóficas de la IA](BasesFilosóficasdelaIA-CastinelliLeonel.jpg)
+![Mapa mental - Bases Filosóficas de la IA](BasesFilosóficasdelaIA-CastinelliLeonel.jpeg)

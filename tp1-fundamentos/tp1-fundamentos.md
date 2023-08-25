@@ -83,7 +83,7 @@ Isaac Asimov (1942, escritor de ciencia ficción) planteó sus 3 leyes de la rob
 Yudkowsky(2008) detalla como diseñar "IA Amigable" y afirma que la amabilidad debe ser diseñada desde el principio, lo que provee un desafío ya que debe diseñarse IA que pueda evolucionar manteniendo esta característica, obligandola a evolucionar bajo un sistema de verificaciones y balances.
 
 
-![Mapa mental - Bases Filosóficas de la IA](BasesFilosóficasdelaIA-CastinelliLeonel.jpg)
+![Mapa mental - Bases Filosóficas de la IA](BasesFilosóficasdelaIA-CastinelliLeonel.jpeg)
 
 En mi opinión deberíamos siempre considerar que una computadora o máquina que ejecuta un algoritmo piensa, pero con énfasis en pensar, no razonar. Siempre me gusta pensar en las computadoras en particular como "Un tonto rápido al servicio de un inteligente lento". Según este pensamiento me lleva a razonar que las máquinas están pensando al ejecutar algoritmos, quizá de una forma más básica o más compleja, guionada por un algoritmo, pero está llevando a cabo procesos que nosotros mismos diseñamos y pre-testeamos en nuestras cabezas. Al diseñar y codificar soluciones estamos impregnando sobre un archivo una parte de nuestros cerebros y sus procesos, llevando a que la máquina replique nuestro pensamiento y razonamiento involuntariamente.
 

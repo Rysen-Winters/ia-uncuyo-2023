@@ -53,4 +53,12 @@ El problema mente-cuerpo nos lleva rápidamente al problema de "el cerebro en un
 
 **El funcionalismo y el experimento de reemplazo de cerebro.**
 
-El funcionalismo
+El funcionalismo argumenta que si una máquina simula la misma funcionalidad que un cerebro entonces es un cerebro sin importar la implementación específica de la funcionalidad. 
+El experimento de reemplazo del cerebro se basa en lo siguiente, si ya estudiamos cada neurona del cerebro y comprendemos su funcionalidad, y creamos máquinas que replican exactamente lo que hace cada una de las neuronas del cerebro de una persona. Si cambiamos gradualmente el cerebro original de una persona por uno artificial que contiene la misma información, ¿Cómo podemos saber si la persona sigue siendo la misma tras el reemplazo?. ¿Por qué es importante esta pregunta? Porque si lograramos demostrar que es la misma persona, entonces el cerebro artificial es equivalente al normal y podríamos decir que las máquinas piensan realmente.
+
+**La consciencia, qualia y la brecha explicativa.**
+
+El problema de la conciencia, es que una máquina debe ser capaz de tener experiencias subjetivas, de que la máquina "perciba" que tiene estados mentales. La naturaleza intrínseca de las experiencias se lo conoce como "qualia". Estos conceptos presentar el problema de saber si las experiencias subjetivas son las mismas para todo el mundo, por ejemplo: ¿Cómo sabemos que todos percibimos de la misma forma el color rojo? Supongamos que una persona percibe el color rojo a través de sus ojos como el resto de nosotros percibimos el color verde. Esta persona aprende todo lo relacionado al color rojo, podrá expresar información con respecto a este color como cualquier otra persona ya que así es como lo aprendió, demostrando que es imposible demostrar que las experiencias subjetivas de cada persona es exactamente las mismas. A este problema se lo conoce como el problema del espectro invertido. Esta incapacidad de explicar incluso que una persona o máquina realmente tiene experiencias subjetivas, esta es la gran brecha explicativa.
+
+### **Las éticas y riesgos del desarrollo de Inteligencia Artificial.**
+

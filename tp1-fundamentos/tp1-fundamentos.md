@@ -56,12 +56,31 @@ El problema mente-cuerpo nos lleva rápidamente al problema de "el cerebro en un
 El funcionalismo argumenta que si una máquina simula la misma funcionalidad que un cerebro entonces es un cerebro sin importar la implementación específica de la funcionalidad. 
 El experimento de reemplazo del cerebro se basa en lo siguiente, si ya estudiamos cada neurona del cerebro y comprendemos su funcionalidad, y creamos máquinas que replican exactamente lo que hace cada una de las neuronas del cerebro de una persona. Si cambiamos gradualmente el cerebro original de una persona por uno artificial que contiene la misma información, ¿Cómo podemos saber si la persona sigue siendo la misma tras el reemplazo?. ¿Por qué es importante esta pregunta? Porque si lograramos demostrar que es la misma persona, entonces el cerebro artificial es equivalente al normal y podríamos decir que las máquinas piensan realmente.
 
-**La consciencia, qualia y la brecha explicativa.**
+**La conciencia, qualia y la brecha explicativa.**
 
 El problema de la conciencia, es que una máquina debe ser capaz de tener experiencias subjetivas, de que la máquina "perciba" que tiene estados mentales. La naturaleza intrínseca de las experiencias se lo conoce como "qualia". Estos conceptos presentar el problema de saber si las experiencias subjetivas son las mismas para todo el mundo, por ejemplo: ¿Cómo sabemos que todos percibimos de la misma forma el color rojo? Supongamos que una persona percibe el color rojo a través de sus ojos como el resto de nosotros percibimos el color verde. Esta persona aprende todo lo relacionado al color rojo, podrá expresar información con respecto a este color como cualquier otra persona ya que así es como lo aprendió, demostrando que es imposible demostrar que las experiencias subjetivas de cada persona es exactamente las mismas. A este problema se lo conoce como el problema del espectro invertido. Esta incapacidad de explicar incluso que una persona o máquina realmente tiene experiencias subjetivas, esta es la gran brecha explicativa.
 
 ### **Las éticas y riesgos del desarrollo de Inteligencia Artificial.**
 
+**Los problemas éticos del desarrollo de nuevos sistemas de IA.**
+
 El desarrollo de IA supone los siguientes problemas éticos:
-- Las personas podrían perder sus trabajos por la automatización: Esto es un problema popularizado pero que en realidad es completamente distinto. Las personas temen que las IA los reemplaze en sus trabajos, cuando en realidad la IA automatizan procesos que no estaban incluidos en el trabajo de ninguna persona, además esta creando puestos de trabajos con mejores salarios y aunque en un futuro el desempleo quizá sea mayor, cada persona estará al mando de su propio grupo de robots trabajadores.
-- Las personas podrían tener mucho o poco tiempo de ocio
+- **Las personas podrían perder sus trabajos por la automatización:** Esto es un problema popularizado pero que en realidad es completamente distinto. Las personas temen que las IA los reemplaze en sus trabajos, cuando en realidad la IA automatizan procesos que no estaban incluidos en el trabajo de ninguna persona, además esta creando puestos de trabajos con mejores salarios y aunque en un futuro el desempleo quizá sea mayor, cada persona estará al mando de su propio grupo de robots trabajadores.
+- **Las personas podrían tener mucho o poco tiempo libre:** Realmente las IA son sistemas que requieren del trabajo de muchas personas para su correcto funcionamiento, provocando que muchos trabajadores tengan que trabajar más cantidad de horas. Pero también gracias a las tareas que realiza permite que también estos trabajadores se tomen más tiempo libre.
+- **Los sistemas de IA podrían ser usados para fines indeseables:** La verdad es que este libro evade un poco la realidad de este punto, pero creo que lo importante a resaltar de este problema ético es que si, cualquier persona puede llevar a cabo actividades indeseables para el resto de nosotros con un sistema de IA. Pero también creo que es deber de nosotros los desarrolladores en hacer todo lo posible para evitar que el mal uso de nuestros sistemas afecte en gran medida a una sociedad humana, por pequeña o grande que sea.
+- **El uso de IA podría resultar en la falta de responsabilidad:** Si un médico dispone de un sistema de IA que da sugerencias de diagnóstico, y decide no usar esta sugerencia en su práctica de medicina y esto cuesta la vida de un paciente, ¿Quién estuvo mal? El médico o la IA, la IA puede haber alterado la visión del médico con respecto al caso, entonces es difícil determinar quién es el responsable en estas situaciones, la IA o el médico. Voy a intervenir nuevamente con la visión del autor en este caso y hacer una pregunta que creo que va a resolver este y casos similares: ¿Quién tiene la culpa de una mal práctica, la herramienta o quién la utiliza? Creo que si se determina que la herramienta no falló, entonces la mala práctica fue llevada a cabo por el humano que la operaba.
+- **El éxito de la IA podría llevar a la raza humana a su fin:** Este punto es muy sencillo, se deben analizar exhaustivamente las consecuencias y posibles efectos de una IA que va a tomar responsabilidades y acciones sobre las vidas humanas, para asegurar que no se puede dar un razonamiento en cadena por parte de la IA que lleve a catástrofes para la raza humana.
+
+**Las leyes de la robótica.**
+
+Isaac Asimov (1942, escritor de ciencia ficción) planteó sus 3 leyes de la robótica:
+1. Un robot nunca deberá lastimar a un ser humano o, a través de su inacción, permitir que un ser humano sea lastimado.
+2. Un robot debe obedecer las órdenes dadas por seres humanos, excepto que dichas órdenes que entren en conflicto con la primera ley.
+3. Un robot debe proteger su propia existencia mientras que dicha protección no entre en conflitcto con las leyes 1. y 2.
+
+**IA Amigable.**
+
+Yudkowsky(2008) detalla como diseñar "IA Amigable" y afirma que la amabilidad debe ser diseñada desde el principio, lo que provee un desafío ya que debe diseñarse IA que pueda evolucionar manteniendo esta característica, obligandola a evolucionar bajo un sistema de verificaciones y balances.
+
+
+![Mapa mental - Bases Filosóficas de la IA](BasesFilosóficasdelaIA-CastinelliLeonel.jpg)

@@ -62,3 +62,6 @@ El problema de la conciencia, es que una máquina debe ser capaz de tener experi
 
 ### **Las éticas y riesgos del desarrollo de Inteligencia Artificial.**
 
+El desarrollo de IA supone los siguientes problemas éticos:
+- Las personas podrían perder sus trabajos por la automatización: Esto es un problema popularizado pero que en realidad es completamente distinto. Las personas temen que las IA los reemplaze en sus trabajos, cuando en realidad la IA automatizan procesos que no estaban incluidos en el trabajo de ninguna persona, además esta creando puestos de trabajos con mejores salarios y aunque en un futuro el desempleo quizá sea mayor, cada persona estará al mando de su propio grupo de robots trabajadores.
+- Las personas podrían tener mucho o poco tiempo de ocio

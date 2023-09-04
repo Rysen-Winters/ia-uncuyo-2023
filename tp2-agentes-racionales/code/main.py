@@ -1,11 +1,16 @@
-from agents import*
 from enviroment import*
+from agents import*
 
-sizeX = 10
-sizeY = 10
+sizeX = 50
+sizeY = 50
 dirt_rate = 0.3
-init_posX = random.randint(0,sizeX - 1)
-init_posY = random.randint(0,sizeY - 1)
-ttl = 1000
-entorno = Enviroment(sizeX, sizeY, dirt_rate, init_posY, init_posY, ttl)
-print(str(entorno))
+entorno = Enviroment(sizeX, sizeY, dirt_rate)
+init_posX = 0 #random.randint(0,sizeX - 1)
+init_posY = 0 #random.randint(0,sizeY - 1)
+ttl = 10000
+agente = SimpleReflexiveAgent(init_posX,init_posY,ttl,entorno)
+entorno.print_enviroment(agente)
+agente.start()
+entorno.print_enviroment(agente)
+print("Posición del agente: x: " + str(agente.posX) + ", y: "+ str(agente.posY))
+print("Performance del agente: "+ str(entorno.get_performance()))

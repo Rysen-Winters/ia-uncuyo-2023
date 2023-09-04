@@ -16,7 +16,7 @@ class SimpleReflexiveAgent:
         self.ttl = ttl
         self.board = board
 
-    def start(self) -> bool:
+    def think(self) -> bool:
         while (self.ttl > 0):
             if self.board.is_dirty(self.posX, self.posY):
                 self.clean()

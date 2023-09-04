@@ -10,7 +10,7 @@ init_posY = 0 #random.randint(0,sizeY - 1)
 ttl = 10000
 agente = SimpleReflexiveAgent(init_posX,init_posY,ttl,entorno)
 entorno.print_enviroment(agente)
-agente.start()
+agente.think()
 entorno.print_enviroment(agente)
 print("Posición del agente: x: " + str(agente.posX) + ", y: "+ str(agente.posY))
 print("Performance del agente: "+ str(entorno.get_performance()))

@@ -21,16 +21,11 @@ class SimpleReflexiveAgent:
         self.board = board
 
     def think(self) -> bool:
-        thinking = True
-        while thinking:
+        while self.ttl:
             if self.board.is_dirty(self.posX, self.posY):
                 self.clean()
             else:
                 self.move()
-            if self.ttl == 0:
-                thinking = False
-            elif (self.cells_visited == (self.board.width*self.board.height)):
-                thinking = False
         return self.idle()
 
     def clean(self) -> bool:

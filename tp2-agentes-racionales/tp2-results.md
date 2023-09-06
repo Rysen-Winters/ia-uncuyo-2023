@@ -2,6 +2,8 @@
 ## **UNCuyo - Facultad de Ingeniería**
 ## **Trabajo Práctico 2 - Agentes Racionales.**
 
+Link a sheets: https://docs.google.com/spreadsheets/d/1meX6N9nTW2bOa8dCGLtiGAXIKMhJzMFmNCGSHKrLmeg/edit?usp=sharing
+
 **Agente Reflexivo Simple**
 
 | Agente Reflexivo Simple | Suciedad     | 0,1         | 0,2              | 0,4         | 0,8              |

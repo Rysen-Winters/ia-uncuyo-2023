@@ -4,20 +4,23 @@ import random
 class SimpleReflexiveAgent:
     posX : int # Su posición en el eje X
     posY : int # Su posición en el eje Y
-    advancing : bool # Indica si el agente está avanzando o retrocediendo en una fila
-    descending : bool # Indica si el agente está ascendiendo a descendiendo de filas
-    ttl : int # Indica la cantidad máxima de acciones que puede realizar el agente
-    actions_consumed : int # La cantidad de acciones realizadas
     board : Enviroment # El entorno en el que el agente va a limpiar
 
-    def __init__(self, init_posX: int, init_posY: int, ttl: int, board:Enviroment):
-        self.posX = init_posX
-        self.posY = init_posY
-        self.advancing = True
-        self.descending = True
-        self.ttl = ttl
-        self.actions_consumed = 0
+    def __init__(self, init_posX: int, init_posY: int, board:Enviroment):
         self.board = board
+        if (board.is_obstacle(init_posX, init_posY)):
+            print("Error: El agente ha sido reubicado a una posición que no esté obstaculizada. \n")
+            misplaced = True
+            while (misplaced):
+                new_init_posX = random.randint(0, self.board.width-1)
+                new_init_posY = random.randint(0, self.board.height-1)
+                if (board.is_obstacle(new_init_posX, new_init_posY) == False):
+                    self.posX = new_init_posX
+                    self.posY = new_init_posY
+                    misplaced = False
+        else:
+            self.posX = init_posX
+            self.posY = init_posY
 
     def think(self) -> bool:
         while self.ttl:

@@ -6,7 +6,7 @@ sizeY = 10
 obstacle_percentage = 0.08
 target_pos = (random.randint(0, sizeX-1), random.randint(0,sizeY-1))
 env = Enviroment(sizeX,sizeY,obstacle_percentage,target_pos)
-agent = SimpleReflexiveAgent(random.randint(0,sizeX-1), random.randint(0,sizeY-1), env)
+agent = BFSAgent(random.randint(0,sizeX-1), random.randint(0,sizeY-1), env)
 print("Agente(X: " + str(agent.posX) + ", Y: " + str(agent.posY) + ")")
 print("Objetivo(X: " + str(env.target_position[0]) + ", Y: " + str(env.target_position[1]) + ")")
 env.print_enviroment(agent)

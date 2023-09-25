@@ -20,11 +20,7 @@ class Enviroment:
         for i in range(0,sizeX,1):
             self.board.append([])
             for j in range(0,sizeY,1):
-                if (random.randint(1,100) <= (obstacle_percentage*100) and (obstacles_in_place < obstacle_amount) and ((i,j) != self.target_position)):
-                    self.board[i].append(True)
-                    obstacles_in_place += 1
-                else:
-                    self.board[i].append(False)
+                self.board[i].append(False)
 
         while (obstacles_in_place < obstacle_amount):
             x = random.randint(0, sizeX-1)

@@ -76,7 +76,7 @@ class Graph:
                         new_node = GraphNode(node_name, [], [])
                         self.edge_list.append(new_node)
 
-                for node in self.edge_list:
+                for node in self.edge_list: 
                     for i in range(0,self.edge_list.__len__(),1):
                         if ((node.name in self.edge_list[i].edges) and not(node.name in node.parent)):
                             node.parent.append(self.edge_list[i].name)

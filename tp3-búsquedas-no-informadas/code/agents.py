@@ -22,15 +22,33 @@ class BFSAgent:
             self.initial_position = initial_position
             self.current_position = initial_position
 
-    def search(self, target_position : (int, int)):
+    def search(self):
         solution = []
-        if (self.initial_position == target_position):
+        if (self.initial_position == self.board.target_position):
             solution.append(self.initial_position)
             return solution
-        
         frontier = []
+        print(self.initial_position)
+        print(self.board.target_position)
         frontier.append(self.initial_position)
         explored = []
+        searching = True
+        while (searching):
+            frontier_position = frontier.pop(frontier.__len__()-1)
+            explored.append(frontier_position)
+            child_states = self.board.get_frontier_states(frontier_position, explored)
+            for child in child_states:
+                print("Child: " + str(child))
+                if child not in frontier:
+                    if child == self.board.target_position:
+                        print("Encontrado objetivo")
+                        return child
+                    frontier.append(child)
+            if frontier == []:
+                searching = False
+
+        return (-1,-1)
+        
     
     def idle(self) -> bool:
         print("El agente se encuentra inactivo")

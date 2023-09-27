@@ -37,7 +37,7 @@ class Enviroment:
             out_string += "|"
             for x in range(0,self.width,1):
                 #out_string += f"({x}, {y})" #
-                if ((agent.posX == x) and (agent.posY == y)):
+                if ((agent.initial_position[0] == x) and (agent.initial_position[1] == y)):
                     if (self.board[x][y] == False):
                         out_string += " A"
                     else:
@@ -67,6 +67,18 @@ class Enviroment:
     def get_target(self) -> int:
         return self.target_position
     
+    def get_frontier_states(self, agent_position : (int, int), explored_states):
+        reachable_states = []
+        if self.accept_action(agent_position[0], agent_position[1], "move up") and ((agent_position[0], agent_position[1] - 1) not in explored_states):
+            reachable_states.append((agent_position[0], agent_position[1] - 1))
+        if self.accept_action(agent_position[0], agent_position[1], "move down") and ((agent_position[0], agent_position[1] + 1) not in explored_states):
+            reachable_states.append((agent_position[0], agent_position[1] + 1))
+        if self.accept_action(agent_position[0], agent_position[1], "move left") and ((agent_position[0] - 1, agent_position[1]) not in explored_states):
+            reachable_states.append((agent_position[0] - 1, agent_position[1]))
+        if self.accept_action(agent_position[0], agent_position[1], "move right") and ((agent_position[0] + 1, agent_position[1]) not in explored_states):
+            reachable_states.append((agent_position[0] + 1, agent_position[1]))
+        return reachable_states
+
     def is_obstacle(self,posX: int,posY: int) -> bool:
         return self.board[posX][posY]
 

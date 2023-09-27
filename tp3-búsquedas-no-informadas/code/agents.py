@@ -53,3 +53,54 @@ class BFSAgent:
     def idle(self) -> bool:
         print("El agente se encuentra inactivo")
         return True
+    
+class Graph:
+    node_name_list = None
+    edge_list = None
+    addressed : bool
+    # nodes lista de los nodos que conforman el grafo.
+    # edges es una lista de los nodos que se ven desde un nodo y la correspondencia es directa con la lista nodes 
+    def __init__(self, nodes, edges, addressed : bool):
+            self.node_name_list = nodes
+            self.edge_list = []
+            self.addressed = addressed
+            if (addressed):
+                len_edges_list = edges.__len__()
+                for i in range(0, nodes.__len__(), 1):
+                    node_name = nodes[i]
+                    if i < len_edges_list:
+                        edge_list = edges[i]
+                        new_node = GraphNode(node_name, edge_list, [])
+                        self.edge_list.append(new_node)
+                    else:
+                        new_node = GraphNode(node_name, [], [])
+                        self.edge_list.append(new_node)
+
+                for node in self.edge_list:
+                    for i in range(0,self.edge_list.__len__(),1):
+                        if ((node.name in self.edge_list[i].edges) and not(node.name in node.parent)):
+                            node.parent.append(self.edge_list[i].name)
+
+            else:
+                for node_name in nodes:
+                    for edge_list in edges:
+                        new_node = GraphNode(node_name, edge_list)
+                        self.node_list.append(new_node)           
+
+    def __str__(self):
+        out_string = "Graph:{\n- Nodes: " + str(self.node_name_list) + "\n- Edges:\n"
+        if (self.addressed):
+            for node in self.edge_list:
+                out_string += "[Name: " + str(node.name) + ", Parent: " + str(node.parent) + ", Edges: " + str(node.edges) + "]\n"
+            out_string += "}"
+        return out_string
+
+class GraphNode:
+    name = None
+    edges = None
+    parent = None
+
+    def __init__(self, node_name, edge_list, parent):
+        self.name = node_name
+        self.edges = edge_list
+        self.parent = parent

@@ -1,6 +1,6 @@
 from enviroment import*
 from agents import*
-
+"""
 sizeX = 10
 sizeY = 10
 obstacle_percentage = 0.08
@@ -17,3 +17,9 @@ print("move left:", env.accept_action(agent.initial_position[0],agent.initial_po
 
 print("Buscando...")
 print(agent.search())
+"""
+
+nodes = [(1,1),(0,1),(1,0),(2,1),(1,2),(0,2),(0,0)]
+edge_list = [[(0,1),(1,0),(2,1),(1,2)],[(0,2),(0,0)]]
+graph = Graph(nodes, edge_list, True)
+print(graph)

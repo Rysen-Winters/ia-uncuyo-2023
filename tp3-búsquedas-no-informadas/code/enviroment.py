@@ -63,7 +63,12 @@ class Enviroment:
         out_string += "Celdas: " + str(total_cells) + ", Celdas libres: " + str(total_cells-obstaculed_cells) + ", Celdas con obstáculos: " + str(obstaculed_cells) +"\n"
         print(out_string)
         return out_string
-
+    
+    def print_solution(self, solution):
+        matrix = [["0" for i in range(self.height)] for j in range(self.width)]
+        print(matrix)
+        
+    
     def get_target(self) -> int:
         return self.target_position
     

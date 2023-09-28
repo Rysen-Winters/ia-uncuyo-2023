@@ -55,7 +55,7 @@ class Enviroment:
                         obstaculed_cells += 1
                     else:
                         out_string += " C"
-            out_string += "| \n"
+            out_string += " |\n"
         out_string = out_string.replace("A",f"{Fore.GREEN}{'A'}{Style.RESET_ALL}")
         out_string = out_string.replace("T",f"{Fore.GREEN}{'T'}{Style.RESET_ALL}")
         out_string = out_string.replace("C",f"{Fore.BLUE}{'C'}{Style.RESET_ALL}")
@@ -64,9 +64,32 @@ class Enviroment:
         print(out_string)
         return out_string
     
-    def print_solution(self, solution):
+    def print_solution(self, agent_position, solution):
         matrix = [["0" for i in range(self.height)] for j in range(self.width)]
-        print(matrix)
+        for x in range(self.width):
+            for y in range(self.height):
+                if self.board[x][y] == False:
+                    matrix[x][y] = "C"
+                else:
+                    matrix[x][y] = "O"
+        for position in solution:
+            matrix[position[0]][position[1]] = "P"
+        matrix[agent_position[0]][agent_position[1]] = "A"
+        matrix[self.target_position[0]][self.target_position[1]] = "T"
+        out_string = ""
+        for y in range(self.height):
+            out_string += "|"
+            for x in range(self.width):
+                out_string += " " + matrix[x][y]
+            out_string += "|\n"
+        out_string = out_string.replace("A",f"{Fore.GREEN}{'A'}{Style.RESET_ALL}")
+        out_string = out_string.replace("T",f"{Fore.GREEN}{'T'}{Style.RESET_ALL}")
+        out_string = out_string.replace("C",f"{Fore.BLUE}{'C'}{Style.RESET_ALL}")
+        out_string = out_string.replace("O",f"{Fore.RED}{'O'}{Style.RESET_ALL}")
+        out_string = out_string.replace("P",f"{Fore.WHITE}{'P'}{Style.RESET_ALL}")
+        print(out_string)
+        return out_string
+        
         
     
     def get_target(self) -> int:

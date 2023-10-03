@@ -32,7 +32,7 @@ class BFSAgent:
         graph_bfs = Graph([],[],True)
         parent = None
         while (searching):
-            frontier_position = frontier.pop(frontier.__len__()-1)
+            frontier_position = frontier.pop(0)
             graph_bfs.add_node(parent, frontier_position, [])
             child_states = self.board.get_frontier_states(frontier_position, explored)
             parent = frontier_position
@@ -42,7 +42,7 @@ class BFSAgent:
                         graph_bfs.add_node(parent, child, [])
                         searching = False
                     frontier.append(child)
-                    #graph_bfs.add_node(parent, child, [])
+                    graph_bfs.add_node(parent, child, [])
             explored.append(frontier_position)
             if frontier == []:
                 searching = False
@@ -93,7 +93,7 @@ class DFSAgent:
         graph_dfs = Graph([],[],True)
         parent = None
         while (searching):
-            frontier_position = frontier.pop(0)
+            frontier_position = frontier.pop(frontier.__len__()-1)
             graph_dfs.add_node(parent, frontier_position, [])
             child_states = self.board.get_frontier_states(frontier_position, explored)
             parent = frontier_position
@@ -103,7 +103,7 @@ class DFSAgent:
                         graph_dfs.add_node(parent, child, [])
                         searching = False
                     frontier.append(child)
-                    #graph_dfs.add_node(parent, child, [])
+                    graph_dfs.add_node(parent, child, [])
             explored.append(frontier_position)
             if frontier == []:
                 searching = False
@@ -143,6 +143,74 @@ class LDSAgent:
         else:
             self.initial_position = initial_position
         self.depth_allowed = depth
+        
+    """
+    def busqueda_profundidad_limitada(grafo, inicio, objetivo, limite):
+        visitados = set()
+        pila = [(inicio, 0)]
+
+        while pila:
+            (nodo, profundidad) = pila.pop()
+            if profundidad > limite:
+                continue
+            if nodo not in visitados:
+                visitados.add(nodo)
+                if nodo == objetivo:
+                    return True
+                for vecino in grafo[nodo]:
+                    pila.append((vecino, profundidad + 1))
+        return False
+
+    # Ejemplo de uso
+    grafo = {
+        'A': ['B', 'C'],
+        'B': ['D', 'E'],
+        'C': ['F'],
+        'D': [],
+        'E': ['F'],
+        'F': []
+    }
+    print(busqueda_profundidad_limitada(grafo, 'A', 'F', 3))  # Devuelve: True
+
+    # implementación recursiva
+
+    def Recursive-DLS(node, problem, limit):
+        cutoff_occurred = False
+        if Goal-Test(problem, State[node]):
+            return node
+        elif Depth[node] == limit:
+            return cutoff
+        else:
+            for each successor in Expand(node, problem):
+                result = Recursive-DLS(successor, problem, limit-1)
+                if result == cutoff:
+                    cutoff_occurred = True
+                elif result != failure:
+                    return result
+            if cutoff_occurred:
+                return cutoff
+            else:
+                return failure
+
+
+    """
+    def lds(self, graph_dfs, parent, frontier, explored, depth):
+        if (depth < self.depth_allowed):
+            frontier_position = frontier.pop(frontier.__len__()-1)
+            graph_dfs.add_node(parent, frontier_position, [])
+            child_states = self.board.get_frontier_states(frontier_position, explored)
+            for child in child_states:
+                if not(child in frontier):
+                    if child == self.board.target_position:
+                        graph_dfs.add_node(parent, child, [])
+                        return True
+                    graph_dfs.add_node(parent, child, [])
+                    result = self.lds(graph_dfs, child, [child], explored, depth + 1)
+                    if (result):
+                        return True
+            return False
+        else:
+            return False
 
     def search(self):
         solution = []
@@ -155,10 +223,11 @@ class LDSAgent:
         searching = True
         graph_dfs = Graph([],[],True)
         parent = None
+        depth = 0
+        solution_found = False
         while (searching):
-            frontier_position = frontier.pop(0)
+            frontier_position = frontier.pop(frontier.__len__()-1)
             graph_dfs.add_node(parent, frontier_position, [])
-            depth += 1
             child_states = self.board.get_frontier_states(frontier_position, explored)
             parent = frontier_position
             for child in child_states:
@@ -166,21 +235,28 @@ class LDSAgent:
                     if child == self.board.target_position:
                         graph_dfs.add_node(parent, child, [])
                         searching = False
+                        solution_found = True
                     frontier.append(child)
-                    #graph_dfs.add_node(parent, child, [])
+                    graph_dfs.add_node(parent, child, [])
+            depth += 1
             explored.append(frontier_position)
-            if frontier == []:
+            
+            if (frontier == []):
                 searching = False
-        
-        generating_solution = True
-        current_node = graph_dfs.get_ady_list(self.board.target_position)
-        while (generating_solution):
-            solution.append(current_node.name)
-            if (current_node.parent != []):
-                current_node = graph_dfs.get_ady_list(current_node.parent[0])
-            else:
-                generating_solution = False
-        solution.reverse()
+            if ((depth == self.depth_allowed) and (solution_found == False)):
+                searching = False
+                print("El Agente LDS se ha quedado sin rango de profundidad.\n")
+
+        if (solution_found):        
+            generating_solution = True
+            current_node = graph_dfs.get_ady_list(self.board.target_position)
+            while (generating_solution):
+                solution.append(current_node.name)
+                if (current_node.parent != []):
+                    current_node = graph_dfs.get_ady_list(current_node.parent[0])
+                else:
+                    generating_solution = False
+            solution.reverse()
         return solution
         
     

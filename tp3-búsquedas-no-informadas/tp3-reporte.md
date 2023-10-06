@@ -6,177 +6,169 @@
 
 **Resultados de los agentes:**
 
-    library(readr)
-    path<-"agent_results.csv"
-    agents_df <- read_csv(path)
+-   **Agente BFS**:
 
-    ## Rows: 120 Columns: 2
-    ## ── Column specification ────────────────────────────────────────────────────────
-    ## Delimiter: ","
-    ## chr (1): Agente
-    ## dbl (1): Nodos explorados
-    ## 
-    ## ℹ Use `spec()` to retrieve the full column specification for this data.
-    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Media: 3381.233
 
-    agents_df
-
-    ## # A tibble: 120 × 2
-    ##    Agente     `Nodos explorados`
-    ##    <chr>                   <dbl>
-    ##  1 Agente BFS               3385
-    ##  2 Agente BFS               3390
-    ##  3 Agente BFS               3370
-    ##  4 Agente BFS               3397
-    ##  5 Agente BFS               3351
-    ##  6 Agente BFS               3386
-    ##  7 Agente BFS               3377
-    ##  8 Agente BFS               3386
-    ##  9 Agente BFS               3358
-    ## 10 Agente BFS               3353
-    ## # ℹ 110 more rows
-
-    bfs_df <- subset(agents_df, Agente == "Agente BFS")
-    dfs_df <- subset(agents_df, Agente == "Agente DFS")
-    lds_df <- subset(agents_df, Agente == "Agente LDS")
-    ucs_df <- subset(agents_df, Agente == "Agente UCS")
-
--   Agente BFS:
-
-Media:
-
-    media_bfs <- mean(bfs_df$`Nodos explorados`, na.rm = TRUE)
-    media_bfs
-
-    ## [1] 3381.233
-
-Desviación estándar:
-
-    sd_bfs <- sd(bfs_df$`Nodos explorados`, na.rm = TRUE)
-    sd_bfs
-
-    ## [1] 67.48828
+Desviación estándar: 67.48828
 
 Cuadro total:
 
-    bfs_df
-
-    ## # A tibble: 30 × 2
-    ##    Agente     `Nodos explorados`
-    ##    <chr>                   <dbl>
-    ##  1 Agente BFS               3385
-    ##  2 Agente BFS               3390
-    ##  3 Agente BFS               3370
-    ##  4 Agente BFS               3397
-    ##  5 Agente BFS               3351
-    ##  6 Agente BFS               3386
-    ##  7 Agente BFS               3377
-    ##  8 Agente BFS               3386
-    ##  9 Agente BFS               3358
-    ## 10 Agente BFS               3353
-    ## # ℹ 20 more rows
+|Agente    |Nodos explorados|
+|----------|----------------|
+|Agente BFS|3385            |
+|Agente BFS|3390            |
+|Agente BFS|3370            |
+|Agente BFS|3397            |
+|Agente BFS|3351            |
+|Agente BFS|3386            |
+|Agente BFS|3377            |
+|Agente BFS|3386            |
+|Agente BFS|3358            |
+|Agente BFS|3353            |
+|Agente BFS|3396            |
+|Agente BFS|3380            |
+|Agente BFS|3231            |
+|Agente BFS|3354            |
+|Agente BFS|3559            |
+|Agente BFS|3393            |
+|Agente BFS|3417            |
+|Agente BFS|3381            |
+|Agente BFS|3365            |
+|Agente BFS|3397            |
+|Agente BFS|3272            |
+|Agente BFS|3356            |
+|Agente BFS|3336            |
+|Agente BFS|3390            |
+|Agente BFS|3384            |
+|Agente BFS|3366            |
+|Agente BFS|3410            |
+|Agente BFS|3607            |
+|Agente BFS|3383            |
+|Agente BFS|3307            |
 
 -   Agente DFS:
 
-Media:
+Media: 2448.467
 
-    media_dfs <- mean(dfs_df$`Nodos explorados`, na.rm = TRUE)
-    media_dfs
-
-    ## [1] 2448.467
-
-Desviación estándar:
-
-    sd_dfs <- sd(dfs_df$`Nodos explorados`, na.rm = TRUE)
-    sd_dfs
-
-    ## [1] 2010.73
+Desviación estándar:2010.73
 
 Cuadro total:
 
-    dfs_df
+|Agente    |Nodos explorados|
+|----------|----------------|
+|Agente DFS|215             |
+|Agente DFS|2925            |
+|Agente DFS|3776            |
+|Agente DFS|3901            |
+|Agente DFS|467             |
+|Agente DFS|3012            |
+|Agente DFS|3931            |
+|Agente DFS|53              |
+|Agente DFS|139             |
+|Agente DFS|73              |
+|Agente DFS|401             |
+|Agente DFS|3641            |
+|Agente DFS|73              |
+|Agente DFS|3500            |
+|Agente DFS|2128            |
+|Agente DFS|3338            |
+|Agente DFS|339             |
+|Agente DFS|3716            |
+|Agente DFS|3947            |
+|Agente DFS|8647            |
+|Agente DFS|366             |
+|Agente DFS|3680            |
+|Agente DFS|141             |
+|Agente DFS|3830            |
+|Agente DFS|73              |
+|Agente DFS|3771            |
+|Agente DFS|3363            |
+|Agente DFS|3971            |
+|Agente DFS|3627            |
+|Agente DFS|2410            |
 
-    ## # A tibble: 30 × 2
-    ##    Agente     `Nodos explorados`
-    ##    <chr>                   <dbl>
-    ##  1 Agente DFS                215
-    ##  2 Agente DFS               2925
-    ##  3 Agente DFS               3776
-    ##  4 Agente DFS               3901
-    ##  5 Agente DFS                467
-    ##  6 Agente DFS               3012
-    ##  7 Agente DFS               3931
-    ##  8 Agente DFS                 53
-    ##  9 Agente DFS                139
-    ## 10 Agente DFS                 73
-    ## # ℹ 20 more rows
 
 -   Agente LDS:
 
-Media:
+Media: 3364.367
 
-    media_lds <- mean(lds_df$`Nodos explorados`, na.rm = TRUE)
-    media_lds
-
-    ## [1] 3364.367
-
-Desviación estándar:
-
-    sd_lds <- sd(lds_df$`Nodos explorados`, na.rm = TRUE)
-    sd_lds
-
-    ## [1] 2381.938
+Desviación estándar: 2381.938
 
 Cuadro total:
 
-    lds_df
+|Agente    |Nodos explorados|
+|----------|----------------|
+|Agente LDS|6084            |
+|Agente LDS|4257            |
+|Agente LDS|3866            |
+|Agente LDS|3654            |
+|Agente LDS|3699            |
+|Agente LDS|3908            |
+|Agente LDS|4045            |
+|Agente LDS|57              |
+|Agente LDS|3986            |
+|Agente LDS|73              |
+|Agente LDS|3574            |
+|Agente LDS|8096            |
+|Agente LDS|93              |
+|Agente LDS|187             |
+|Agente LDS|3036            |
+|Agente LDS|5168            |
+|Agente LDS|6804            |
+|Agente LDS|3648            |
+|Agente LDS|4583            |
+|Agente LDS|7934            |
+|Agente LDS|1900            |
+|Agente LDS|3769            |
+|Agente LDS|151             |
+|Agente LDS|5623            |
+|Agente LDS|73              |
+|Agente LDS|3732            |
+|Agente LDS|141             |
+|Agente LDS|4608            |
+|Agente LDS|63              |
+|Agente LDS|4119            |
 
-    ## # A tibble: 30 × 2
-    ##    Agente     `Nodos explorados`
-    ##    <chr>                   <dbl>
-    ##  1 Agente LDS               6084
-    ##  2 Agente LDS               4257
-    ##  3 Agente LDS               3866
-    ##  4 Agente LDS               3654
-    ##  5 Agente LDS               3699
-    ##  6 Agente LDS               3908
-    ##  7 Agente LDS               4045
-    ##  8 Agente LDS                 57
-    ##  9 Agente LDS               3986
-    ## 10 Agente LDS                 73
-    ## # ℹ 20 more rows
 
 -   Agente UCS:
 
-Media:
+Media: 3495.367
 
-    media_ucs <- mean(ucs_df$`Nodos explorados`, na.rm = TRUE)
-    media_ucs
-
-    ## [1] 3495.367
-
-Desviación estándar:
-
-    sd_ucs <- sd(ucs_df$`Nodos explorados`, na.rm = TRUE)
-    sd_ucs
-
-    ## [1] 62.00472
+Desviación estándar: 62.00472
 
 Cuadro total:
 
-    ucs_df
+|Agente    |Nodos explorados|
+|----------|----------------|
+|Agente UCS|3489            |
+|Agente UCS|3490            |
+|Agente UCS|3470            |
+|Agente UCS|3514            |
+|Agente UCS|3469            |
+|Agente UCS|3495            |
+|Agente UCS|3481            |
+|Agente UCS|3484            |
+|Agente UCS|3462            |
+|Agente UCS|3459            |
+|Agente UCS|3509            |
+|Agente UCS|3494            |
+|Agente UCS|3392            |
+|Agente UCS|3459            |
+|Agente UCS|3702            |
+|Agente UCS|3507            |
+|Agente UCS|3518            |
+|Agente UCS|3496            |
+|Agente UCS|3467            |
+|Agente UCS|3506            |
+|Agente UCS|3447            |
+|Agente UCS|3477            |
+|Agente UCS|3440            |
+|Agente UCS|3496            |
+|Agente UCS|3484            |
+|Agente UCS|3472            |
+|Agente UCS|3517            |
+|Agente UCS|3703            |
+|Agente UCS|3488            |
+|Agente UCS|3474            |
 
-    ## # A tibble: 30 × 2
-    ##    Agente     `Nodos explorados`
-    ##    <chr>                   <dbl>
-    ##  1 Agente UCS               3489
-    ##  2 Agente UCS               3490
-    ##  3 Agente UCS               3470
-    ##  4 Agente UCS               3514
-    ##  5 Agente UCS               3469
-    ##  6 Agente UCS               3495
-    ##  7 Agente UCS               3481
-    ##  8 Agente UCS               3484
-    ##  9 Agente UCS               3462
-    ## 10 Agente UCS               3459
-    ## # ℹ 20 more rows

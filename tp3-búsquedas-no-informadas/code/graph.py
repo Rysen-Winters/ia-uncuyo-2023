@@ -57,6 +57,9 @@ class Graph:
                     new_node = GraphNode(edge_name, [], [node_name])
                     self.edge_list.append(new_node)
 
+    def get_size(self):
+        return self.node_name_list.__len__()
+
 class GraphNode:
     name = None
     edges = None

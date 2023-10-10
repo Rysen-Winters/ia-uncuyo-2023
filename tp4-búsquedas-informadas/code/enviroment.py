@@ -1,13 +1,12 @@
 from colorama import Fore, Style
 import random
-import multiprocessing
 
 class Enviroment:
     width : int # El ancho del tablero
     height : int # La altura del tablero
     board = None # El tablero en que se va a mover el agente.
     obstacle_percentage : float # Un valor entre 0.01 y 1.0 que indica el porcentaje de la tabla que estará obstaculizada.
-    target_position : (int, int) # La medida de performance.
+    target_position : (int, int) # El name de la posición objetivo
 
     def __init__(self, sizeX: int, sizeY: int, obstacle_percentage: float, target_position : (int, int)):
         self.width = sizeX
@@ -20,13 +19,14 @@ class Enviroment:
         for i in range(0,sizeX,1):
             self.board.append([])
             for j in range(0,sizeY,1):
-                self.board[i].append(False)
+                new_node = EnviromentNode((i,j), False)
+                self.board[i].append(new_node)
 
         while (obstacles_in_place < obstacle_amount):
             x = random.randint(0, sizeX-1)
             y = random.randint(0, sizeY-1)
-            if ((self.board[x][y] == False) and ((x,y) != self.target_position)):
-                self.board[x][y] = True
+            if ((self.board.obstaculized((x,y)) == False) and ((x,y) != self.target_position)):
+                self.board[x][y].obstaculize()
                 obstacles_in_place += 1
 
     def get_target(self) -> int:
@@ -108,8 +108,8 @@ class Enviroment:
         print(out_string)
         return out_string
 
-    def is_obstacle(self,posX: int,posY: int) -> bool:
-        return self.board[posX][posY]
+    def obstaculized(self, position : (int,int)) -> bool:
+        return self.board[position[0]][position[1]].obstacled
 
     def accept_action(self, posX: int, posY: int, action: str) -> bool:
         if action == "move right":
@@ -127,6 +127,17 @@ class Enviroment:
         return False
     
 class EnviromentNode:
-    cost_list : list # Es una lista de los costos a sus nodos vecinos en el orden arriba, derecha, abajo, izquiera, los valores para vecinos no accesibles es 0.
+    cost_list : list # Es una lista de los costos a sus nodos vecinos en el orden arriba, derecha, abajo, izquiera, los valores para vecinos no accesibles es 0. Se incializa siempre como [0,0,0,0]
     name : (int, int) # Es la posición que representa este nodo.
     obstacled : bool # Si la posición está obstaculizada, si es asi, la lista de costos no será inicializada.
+
+    def __init__(self, name : (int,int), obstacled : bool):
+        self.name = name
+        self.obstacled
+        if not(obstacled):
+           self.cost_list = [0,0,0,0]
+
+    def obstaculize(self) -> bool:
+        self.cost_list = None
+        self.obstacled = True
+        return True

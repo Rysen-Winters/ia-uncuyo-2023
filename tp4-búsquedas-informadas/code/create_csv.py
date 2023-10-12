@@ -24,7 +24,7 @@ nombre_archivo = "informed_agent_results.csv"
 
 with open(nombre_archivo, mode='w', newline='') as archivo:
     escritor = csv.writer(archivo)
-    escritor.writerow(["Agente", "Numero de enviroment","Nodos explorados", "Solución encontrada"])
+    escritor.writerow(["Agente", "Nodos explorados","Numero de enviroment", "Solución encontrada"])
     escritor.writerows(star_total)
 
 print(f"Archivo {nombre_archivo} creado exitosamente.")

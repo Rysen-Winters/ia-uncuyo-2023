@@ -6,44 +6,45 @@
 
 **Resultado del agente A\*:**
 
-Media de nodos explorados: 14.5
+Media de nodos explorados: 828.3333
 
-Desviación estándar: 8.803408
+Desviación estándar: 47.60421
 
 Cuadro total:
 
 |Agente|Nodos explorados|Numero de enviroment|Solución encontrada|
-|------|--------------------|----------------|-------------------|
-|A*    |145                 |0               |True               |
-|A*    |32                  |1               |True               |
-|A*    |73                  |2               |True               |
-|A*    |60                  |3               |True               |
-|A*    |122                 |4               |True               |
-|A*    |44                  |5               |True               |
-|A*    |151                 |6               |True               |
-|A*    |71                  |7               |True               |
-|A*    |232                 |8               |True               |
-|A*    |35                  |9               |True               |
-|A*    |59                  |10              |True               |
-|A*    |48                  |11              |True               |
-|A*    |44                  |12              |True               |
-|A*    |113                 |13              |True               |
-|A*    |62                  |14              |True               |
-|A*    |144                 |15              |True               |
-|A*    |160                 |16              |True               |
-|A*    |90                  |17              |True               |
-|A*    |69                  |18              |True               |
-|A*    |131                 |19              |True               |
-|A*    |67                  |20              |True               |
-|A*    |58                  |21              |True               |
-|A*    |32                  |22              |True               |
-|A*    |140                 |23              |True               |
-|A*    |71                  |24              |True               |
-|A*    |141                 |25              |True               |
-|A*    |142                 |26              |True               |
-|A*    |63                  |27              |True               |
-|A*    |58                  |28              |True               |
-|A*    |53                  |29              |True               |
+|------|----------------|--------------------|-------------------|
+|A*    |833             |0                   |True               |
+|A*    |775             |1                   |True               |
+|A*    |847             |2                   |True               |
+|A*    |815             |3                   |True               |
+|A*    |820             |4                   |True               |
+|A*    |858             |5                   |True               |
+|A*    |822             |6                   |True               |
+|A*    |820             |7                   |True               |
+|A*    |806             |8                   |True               |
+|A*    |746             |9                   |True               |
+|A*    |796             |10                  |True               |
+|A*    |776             |11                  |True               |
+|A*    |854             |12                  |True               |
+|A*    |990             |13                  |True               |
+|A*    |856             |14                  |True               |
+|A*    |822             |15                  |True               |
+|A*    |802             |16                  |True               |
+|A*    |830             |17                  |True               |
+|A*    |960             |18                  |True               |
+|A*    |846             |19                  |True               |
+|A*    |795             |20                  |True               |
+|A*    |835             |21                  |True               |
+|A*    |798             |22                  |True               |
+|A*    |843             |23                  |True               |
+|A*    |809             |24                  |True               |
+|A*    |805             |25                  |True               |
+|A*    |813             |26                  |True               |
+|A*    |826             |27                  |True               |
+|A*    |846             |28                  |True               |
+|A*    |806             |29                  |True               |
+
 
 Boxplot del agente:
 

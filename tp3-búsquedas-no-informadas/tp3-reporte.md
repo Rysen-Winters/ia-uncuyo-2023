@@ -2,7 +2,7 @@
 
 ## **UNCuyo - Facultad de Ingeniería**
 
-## **Trabajo Práctico 2 - Agentes Racionales.**
+## **Trabajo Práctico 3 - Búsqueda no informada.**
 
 **Resultados de los agentes:**
 

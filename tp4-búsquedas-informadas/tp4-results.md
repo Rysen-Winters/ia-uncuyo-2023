@@ -11,7 +11,7 @@ Desviación estándar: 8.803408
 
 Cuadro total:
 
-|Agente|Numero de enviroment|Nodos explorados|Solución encontrada|
+|Agente|Nodos explorados|Numero de enviroment|Solución encontrada|
 |------|--------------------|----------------|-------------------|
 |A*    |145                 |0               |True               |
 |A*    |32                  |1               |True               |

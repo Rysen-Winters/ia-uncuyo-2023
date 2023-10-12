@@ -7,6 +7,7 @@
 **Resultado del agente A\*:**
 
 Media de nodos explorados: 14.5
+
 Desviación estándar: 8.803408
 
 Cuadro total:

@@ -180,3 +180,8 @@ Cuadro total:
 ### Boxplots:
 
 ![No se pudo cargar la imagen de los boxplot](agents_boxplot.png "Boxplots de los agentes")
+
+
+### Conclusión:
+
+En mi opinión, el algoritmo por BFS es el mejor para la búsqueda del camino óptimo ya que nos garantiza una excelente solución sin explorar demasiados estados ni desperdiciar recursos o tiempo.

@@ -1,4 +1,5 @@
 import random
+import math
 
 def initialize(N):
     # Crear una lista vacía para almacenar la posición de las reinas
@@ -44,44 +45,76 @@ def neighbours(N,solution):
     # Devolver la lista de neighbours
     return neighbours
 
-# Definir una función para elegir el mejor vecino de una solución
 def best_candidate(N,solution):
-    # Obtener la lista de neighbours de la solución
-    lista = neighbours(N,solution)
-    # Inicializar el mejor vecino y el mejor valor con el primero de la lista
-    mejor = lista[0]
-    valor = posible_attacks(N,mejor)
-    # Para cada vecino de la lista, excepto el primero
-    for i in range(1, len(lista)):
-        # Calcular el número de posible_attacks del vecino
-        ataques_i = posible_attacks(N,lista[i])
-        # Si el número de posible_attacks es menor que el mejor valor
-        if ataques_i < valor:
-        # Actualizar el mejor vecino y el mejor valor con el vecino actual
-            mejor = lista[i]
-            valor = ataques_i
-    # Devolver el mejor vecino y el mejor valor
-    return mejor, valor
+    lista = neighbours(N,solution)# Obtener la lista de neighbours de la solución  
+    best_neighbour = lista[0] # Inicializar el mejor vecino y el mejor valor con el primero de la lista
+    poss_atks = posible_attacks(N,best_neighbour)
+    
+    for i in range(1, len(lista)): # Para cada vecino de la lista, excepto el primero
+        ataques_i = posible_attacks(N,lista[i]) # Calcular el número de posible_attacks del vecino
+
+        if ataques_i < poss_atks:# Si el número de posible_attacks es menor que el mejor valor
+            # Actualizar el mejor vecino y el mejor valor con el vecino actual
+            best_neighbour = lista[i]
+            poss_atks = ataques_i
+
+    return best_neighbour, poss_atks
 
 # Definir una función para implementar el algoritmo Hillclimbing
 def nqueens_hillclimbing(N):
-    # Crear una solución inicial aleatoria
-    solution = initialize(N)
-    # Calcular el número de posible_attacks de la solución inicial
-    valor = posible_attacks(N,solution)
-    # Mientras haya posibilidad de mejora
+    solution = initialize(N) # Crear una solución inicial aleatoria
+    possible_atk = posible_attacks(N,solution) # Calcular el número de posible_attacks de la solución inicial
     searching = True
     states_explored = 0
+    possible_states = pow(N,N)
+
     while (searching):
-        # Elegir el mejor vecino de la solución actual
-        vecino, valor_vecino = best_candidate(N,solution)
+        neighbour, neigbour_poss_atks = best_candidate(N,solution)
         states_explored += 1
-        # Si el número de posible_attacks del vecino es menor que el de la solución actual
-        if valor_vecino < valor:
+       
+        if neigbour_poss_atks < possible_atk:  # Si el número de posible_attacks del vecino es menor que el de la solución actual
             # Actualizar la solución y el valor con el vecino y su valor
-            solution = vecino[:]
-            valor = valor_vecino
+            solution = neighbour[:]
+            possible_atk = neigbour_poss_atks
         else:
             # Si no hay mejora, terminar el bucle y devolver la solución y el valor actuales
             searching = False
+
+        if states_explored == possible_states:
+            searching = False
+
+    return solution, possible_atk, states_explored
+
+def temperature(T, i): # Usa un esquema de enfriamiento exponencial
+    return T * 0.95**i
+
+# Definir una función para elegir un vecino al azar de una solución
+def random_neighbour(N, solution):
+    i = random.randint(0, N-1) # Elegir una columna al azar
+    j = random.choice([k for k in range(N) if k != solution[i]]) # Elegir una row al azar, distinta de la actual
+    copy = solution[:]
+    copy[i] = j # Cambiar la posición de la reina en la columna i a la row j
+    return copy
+
+# Definir una función para implementar el algoritmo Simulated Annealing
+def nqueens_simulated_annealing(N):
+    solution = initialize(N)
+    valor = posible_attacks(N,solution)
+    T = 1.0  # Inicializar la temperatura
+    states_explored = 0
+
+    while T > 1e-3: # Mientras la temperatura sea mayor que un umbral
+        vecino = random_neighbour(N,solution)
+        valor_vecino = posible_attacks(N,vecino)
+        states_explored += 1
+        
+        delta = valor_vecino - valor # Calcular la diferencia de posible_attacks entre el vecino y la solución actual
+       
+        if delta < 0 or random.random() < math.exp(-delta/T):  # Si el vecino es mejor que la solución actual, o si se cumple la condición de probabilidad del algoritmo
+            # Actualizar la solución y el valor con el vecino y su valor
+            solution = vecino[:]
+            valor = valor_vecino
+        
+        T = temperature(T, 1) # Disminuir la temperatura
+    
     return solution, valor, states_explored

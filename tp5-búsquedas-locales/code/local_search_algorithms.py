@@ -85,10 +85,12 @@ def nqueens_hillclimbing(N):
 
     return solution, possible_atk, states_explored
 
+
+# Algoritmo Simulated Annealing
+
 def temperature(T, i): # Usa un esquema de enfriamiento exponencial
     return T * 0.95**i
 
-# Definir una función para elegir un vecino al azar de una solución
 def random_neighbour(N, solution):
     i = random.randint(0, N-1) # Elegir una columna al azar
     j = random.choice([k for k in range(N) if k != solution[i]]) # Elegir una row al azar, distinta de la actual
@@ -96,7 +98,6 @@ def random_neighbour(N, solution):
     copy[i] = j # Cambiar la posición de la reina en la columna i a la row j
     return copy
 
-# Definir una función para implementar el algoritmo Simulated Annealing
 def nqueens_simulated_annealing(N):
     solution = initialize(N)
     valor = posible_attacks(N,solution)
@@ -118,3 +119,61 @@ def nqueens_simulated_annealing(N):
         T = temperature(T, 1) # Disminuir la temperatura
     
     return solution, valor, states_explored
+
+
+# Algoritmo genético
+
+def initialize_population(pop_size, N):
+    population = []
+    for _ in range(pop_size):
+        solution = initialize(N)
+        population.append(solution)
+    return population
+
+def fitness(solution):
+    attacks = 0
+    N = len(solution)
+    attacks = posible_attacks(N,solution)
+    return 1 / (attacks + 1)  # Invertir para convertir en función de aptitud
+
+def select_parents(population, num_parents):
+    parents = []
+    for _ in range(num_parents):
+        parent = random.choice(population)
+        parents.append(parent)
+    return parents
+
+def crossover(parent1, parent2):
+    N = len(parent1)
+    crossover_point = random.randint(1, N - 1)
+    child = parent1[:crossover_point] + parent2[crossover_point:]
+    return child
+
+def mutate(solution, mutation_rate):
+    for i in range(len(solution)):
+        if random.random() < mutation_rate:
+            solution[i] = random.randint(0, len(solution) - 1)
+    return solution
+
+def nqueens_genetic_algorithm(N):
+    pop_size = 10000
+    num_generations = 100
+    mutation_rate = 0.2
+    population = initialize_population(pop_size, N)
+    for generation in range(num_generations):
+        population.sort(key=fitness, reverse=True)  # Ordenar por aptitud descendente
+        if fitness(population[0]) == 1.0:  # Si se encuentra una solución perfecta, terminar
+            return population[0], posible_attacks(N,population[0]), pop_size*num_generations
+        parents = select_parents(population, pop_size // 2)
+        new_population = parents.copy()
+        while len(new_population) < pop_size:
+            parent1, parent2 = random.sample(parents, 2)
+            child = crossover(parent1, parent2)
+            child = mutate(child, mutation_rate)
+            new_population.append(child)
+        population = new_population
+
+    # Devolver la mejor solución encontrada después de todas las generaciones
+    population.sort(key=fitness, reverse=True)
+    pos_attacks = posible_attacks(N,population[0])
+    return population[0], pos_attacks, pop_size*num_generations

@@ -348,6 +348,9 @@
 
 -   **Algoritmo Genético**:
 
+Cada individuo de la población es una "solución" al problema generada aleatoriamente, se seleccionan como padres a la mitad de la población que sea más apto y se toman como una mitad de la nueva generación, se genera con ellos a los nuevos individuos y cada valor del individuo tiene un 15% de probabilidades de "mutar" y cambiar a otro valor.
+Para este algoritmo contamos con los operadores "fitness" (devuelve un valor float entre 0 y 1 para determinar que tan apto es una solución), operador "crossover" ("cruza" dos soluciones para dar una nueva a partir de dividir los valores de los padres en un punto aleatorio para tomarlos para si), operador "select parents" (selecciona a la mejor mitad de una población) y operador "mutate" (Cambia un valor del individuo con un 15% de probabilidad por valor del individuo).
+
     - Porcentaje de veces que encontró la solución final: 62%
 
     - Media del tiempo de ejecucion: 0.8491872 segundos

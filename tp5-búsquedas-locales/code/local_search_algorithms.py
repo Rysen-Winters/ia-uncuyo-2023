@@ -67,9 +67,12 @@ def nqueens_hillclimbing(N):
     searching = True
     states_explored = 0
     possible_states = pow(N,N)
+    h_history = []
+    h_history.append(possible_atk)
 
     while (searching):
         neighbour, neigbour_poss_atks = best_candidate(N,solution)
+        h_history.append(neigbour_poss_atks)
         states_explored += 1
        
         if neigbour_poss_atks < possible_atk:  # Si el número de posible_attacks del vecino es menor que el de la solución actual
@@ -83,7 +86,7 @@ def nqueens_hillclimbing(N):
         if states_explored == possible_states:
             searching = False
 
-    return solution, possible_atk, states_explored
+    return solution, possible_atk, states_explored, h_history
 
 
 # Algoritmo Simulated Annealing
@@ -100,25 +103,27 @@ def random_neighbour(N, solution):
 
 def nqueens_simulated_annealing(N):
     solution = initialize(N)
+    h_history = []
     valor = posible_attacks(N,solution)
-    T = 1.0  # Inicializar la temperatura
+    h_history.append(valor)
+    T = 1.4  # Inicializar la temperatura
     states_explored = 0
 
     while T > 1e-3: # Mientras la temperatura sea mayor que un umbral
         vecino = random_neighbour(N,solution)
         valor_vecino = posible_attacks(N,vecino)
+        h_history.append(valor_vecino)
         states_explored += 1
-        
         delta = valor_vecino - valor # Calcular la diferencia de posible_attacks entre el vecino y la solución actual
        
         if delta < 0 or random.random() < math.exp(-delta/T):  # Si el vecino es mejor que la solución actual, o si se cumple la condición de probabilidad del algoritmo
             # Actualizar la solución y el valor con el vecino y su valor
             solution = vecino[:]
             valor = valor_vecino
-        
+
         T = temperature(T, 1) # Disminuir la temperatura
     
-    return solution, valor, states_explored
+    return solution, valor, states_explored, h_history
 
 
 # Algoritmo genético
@@ -138,9 +143,8 @@ def fitness(solution):
 
 def select_parents(population, num_parents):
     parents = []
-    for _ in range(num_parents):
-        parent = random.choice(population)
-        parents.append(parent)
+    population.sort(key=fitness,reverse=True)
+    parents = population[:num_parents]
     return parents
 
 def crossover(parent1, parent2):
@@ -156,24 +160,31 @@ def mutate(solution, mutation_rate):
     return solution
 
 def nqueens_genetic_algorithm(N):
-    pop_size = 10000
-    num_generations = 100
-    mutation_rate = 0.2
+    pop_size = 100
+    num_generations = 1000
+    mutation_rate = 0.15
     population = initialize_population(pop_size, N)
+    h_history = []
+    explored_states = 100
+
+    for person in population:
+        h_history.append(posible_attacks(N,person))
+
     for generation in range(num_generations):
         population.sort(key=fitness, reverse=True)  # Ordenar por aptitud descendente
         if fitness(population[0]) == 1.0:  # Si se encuentra una solución perfecta, terminar
-            return population[0], posible_attacks(N,population[0]), pop_size*num_generations
+            return population[0], posible_attacks(N,population[0]), explored_states, h_history
         parents = select_parents(population, pop_size // 2)
         new_population = parents.copy()
         while len(new_population) < pop_size:
             parent1, parent2 = random.sample(parents, 2)
             child = crossover(parent1, parent2)
             child = mutate(child, mutation_rate)
+            explored_states += 1
+            h_history.append(posible_attacks(N,child))
             new_population.append(child)
         population = new_population
 
-    # Devolver la mejor solución encontrada después de todas las generaciones
     population.sort(key=fitness, reverse=True)
     pos_attacks = posible_attacks(N,population[0])
-    return population[0], pos_attacks, pop_size*num_generations
+    return population[0], pos_attacks, explored_states, h_history

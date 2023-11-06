@@ -28,7 +28,7 @@ Se utilizarán las siguientes métricas:
   - **Exactitud (Accuracy):** Cantidad de cuentas identificadas correctamente como falsas en comparación con todas las cuentas clasificadas.
   - **Sensibilidad (Recall):** Proporción de cuentas falsas reales son detectadas por el modelo.
   - **Precisión (Precisión):** Cuántas de las cuentas que el modelo etiqueta como falsas son verdaderamente falsas.
-  - **Especificidad (Specificity):** Cuántas de las cuentas que el modelo etiqueta como falsas son verdaderamente falsas.
+  - **Especificidad (Specificity):** Cuántas de las cuentas que el modelo etiqueta como verdaderas son realmente verdaderas.
 
 ### Justificación.
 

@@ -6,7 +6,7 @@
 
 **Nombre código del proyecto:** Heartbreak.
 
-**Integrantes:** Nahuel Arrieta y Leonel Castinelli (13198).
+**Integrantes:** Nahuel Arrieta (13729) y Leonel Castinelli (13198).
 
 ### Descripción.
 

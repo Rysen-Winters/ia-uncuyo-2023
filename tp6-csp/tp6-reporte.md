@@ -15,3 +15,30 @@
     - Cada "cuadrante" de 3x3 debe contener todos los números del 1 al 9 sin repetir.
 
 ### 2. Utilizar el algoritmo AC-3 para demostrar que la arco consistencia puede detectar la inconsistencia de la asignación parcial {WA=red, V=blue} para el problema del colorar el mapa de Australia (Figura 5.1 AIMA 2da edición ).
+
+
+Inicialmente tendríamos las variables y sus dominios parciales, debido a la asignación parcial, de la siguiente forma:
+
+- Western Australia = {red}
+- Northern Territory = {red, green, blue}
+- South Australia = {red, green, blue}
+- Queensland = {red, green, blue}
+- New South Wales = {red, green, blue}
+- Victoria = {blue}
+- Tasmania = {red, green, blue}
+
+Y tendríamos la siguiente cola de aristas:
+
+- (V, NSW)
+- (V, SA)
+- (WA, NT)
+- (WA, SA)
+- (NT, SA)
+- (NT, Q)
+- (SA, Q)
+- (SA, NSW)
+- (Q, NSW)
+
+
+Siguiendo el algoritmo:
+

@@ -424,3 +424,28 @@ Caso inductivo n > 2 Sea X = {x1,x2,...,xn} el conjunto de variables, y sea C = 
 
 La 2-consistencia garantiza que todas las restricciones del algoritmo se cumplan, ya que el algoritmo procesa las restricciones en un orden topológico, resolviéndolas de raíz a hojas. Por lo tanto, no es necesario alcanzar una mayor n-consistencia en este contexto, y la 2-consistencia es adecuada para encontrar una solución o reportar un fallo en el CSP.
 
+
+### Ejercicio 6
+
+Boxplot de tiempos de ejecución (en nanosegundos):
+
+![](img/tiempo_de_ejecucion.png)
+
+Boxplot exploración de asignaciones
+
+![](img/asignaciones_de_variables.png)
+
+Cuadro total:
+
+|Algoritmo       |Cantidad de reinas|Tiempo de ejecucion (ns)|Numero de asignaciones exploradas|
+|----------------|------------------|------------------------|---------------------------------|
+|Backtracking    |4                 |0                       |26                               |
+|Backtracking    |8                 |0                       |876                              |
+|Backtracking    |10                |12905700                |975                              |
+|Backtracking    |12                |2998200                 |3066                             |
+|Backtracking    |15                |14705500                |20280                            |
+|Forward Checking|4                 |0                       |8                                |
+|Forward Checking|8                 |0                       |113                              |
+|Forward Checking|10                |1010400                 |102                              |
+|Forward Checking|12                |413700                  |261                              |
+|Forward Checking|15                |16357000                |1359                             |

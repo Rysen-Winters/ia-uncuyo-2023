@@ -79,6 +79,6 @@ Nuestra predicción con K = 1 es Red, porque la observación más cercana al pun
 
 Nuestra predicción con K = 3 es Red, porque las tres observaciones más cercanas al punto de prueba son las números 2, 5 y 6, que tienen dos etiquetas Red y una Green. Y ya que el método de los K vecinos más cercanos toma la etiqueta de la clase mayoritaria entre las K observaciones más cercanas al punto de prueba, se elije la etiqueta Red.
 
-- (d) If the Bayes decision boundary in this problem is highly nonlinear, then would we expect the best value for K to be large or small? Why?
+- (d) If the Bayes decision boundary in this problem is highly non-linear, then would we expect the best value for K to be large or small? Why?
 
 Si el límite de decisión de Bayes en este problema es altamente no lineal, entonces esperaríamos que el mejor valor para K sea pequeño, porque un valor pequeño de K permite que el modelo se adapte mejor a la forma no lineal de los datos. Un valor grande de K, por el contrario, haría que el modelo fuera más suave y lineal, lo que podría provocar un mal ajuste y una baja precisión.

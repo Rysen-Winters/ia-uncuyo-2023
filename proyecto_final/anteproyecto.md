@@ -10,7 +10,17 @@
 
 ## Descripción
 
-El proyecto consta  de generar un modelo que pueda predecir si una cuenta de la red social Instagram es falsa (ya sea un bot o tenga seguidores comprados). Se utilizará un algoritmo de machine learning entrenado con un dataset de la plataforma kaggle (https://www.kaggle.com/datasets/krpurba/fakeauthentic-user-instagram) el cuál ha recopilado datos de 65326 usuarios reales o auténticos y falsos desde el 1 al 20 de septiembre de 2019, lo cual prueba ser de grán utilidad ya que contiene muchas métricas de cada usuario. Además de ser muy extensa.  
+El proyecto consta  de generar un modelo que pueda predecir si una cuenta de la red social Instagram es falsa (ya sea un bot o tenga seguidores comprados). Se utilizará un algoritmo de machine learning entrenado con un dataset de la plataforma kaggle (https://www.kaggle.com/datasets/krpurba/fakeauthentic-user-instagram) el cuál ha recopilado datos de 65326 usuarios reales o auténticos y falsos desde el 1 al 20 de septiembre de 2019, lo cual prueba ser de grán utilidad ya que contiene muchas métricas de cada usuario. Además de ser muy extensa, contiene datos de utilidad como: 
+- Número de posteos.
+- Número de Seguidos.
+- Número de Seguidores.
+- Longitud de biografía.
+- Disponibilidad de imagen de perfil.
+- Disponibilidad de links externos.
+- Longitud promedio de descripción en posteos.
+- Porcentaje de posteos que no son imágenes.
+- Porcentaje de tag de ubicación.
+- Intervalo de tiempo de posteos.
 
 ## Objetivos, alcances y limitaciones
 
@@ -38,6 +48,8 @@ Se utilizarán las siguientes métricas:
 Consideramos que un modelo de machine learning es un enfoque correcto para el problema planteado porque estos pueden detectar patrones y relaciones complejas entre las características de las cuentas, las cuales quizá no capturamos a simple vista, también podríamos encontrar nuevas relaciones entre parámetros que caracterizan a una cuenta falsa o con seguidores comprados.
 
 La detección de cuentas falsas requiere un gran análisis estadístico que un modelo de ML puede realizar en tiempo real y de manera eficiente. Especialmente, teniendo la posibilidad de entrenarlo con un dataset de 65.000 datos ya etiquetados, además de poder encontrar relaciones entre las columnas del dataset que pasarían inadvertidas ante un humano.
+
+Finalmente, al tener una gran cantidad de columnas y filas en el dataset creemos que podemos sacarle mucho provecho con un enfoque de machine learning donde creemos que podemos generar un modelo efectivo.
 
 **Listado de actividades a realizar:**
 

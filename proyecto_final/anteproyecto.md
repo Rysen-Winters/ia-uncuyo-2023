@@ -71,7 +71,7 @@ Finalmente, al tener una gran cantidad de columnas y filas en el dataset creemos
 
 **Grafico de las actividades:**
 
-![](img/gantt_heartbreak.jpg)
+![](gantt_heartbreak.jpg)
 
 ### Proyectos similares
 

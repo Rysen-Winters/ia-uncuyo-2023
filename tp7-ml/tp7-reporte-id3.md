@@ -19,3 +19,25 @@ Este es el árbol devuelto por el algoritmo, cada nodo está representado por (p
 
 
 ## Investigación de las estrategias de árboles de decisión para valores reales
+
+Los atributos contínuos e incluso los enteros como por ejemplo la Altura o Peso de una persona, tienen un conjunto de valores posibles infinitos. Preferiblemente antes que generar infinitas ramas para el árbol, el algoritmo de aprendizaje encuentra un punto de división que de la mayor ganancia de información. Por ejemplo, dado un nodo en el árbol, quizá pueda ser el caso que probar con Peso > 160 nos da la mayor información. Métodos eficientes existen para encontrar buenos valores de división: 
+
+- Iniciar por ordenar los valores del atributo.
+- Considerar solo los puntos de división que se encuentran entre dos ejemplos, viendolos de forma ordenada, que tienen clasificaciones diferentes, mientras seguimos los totales de ejemplos positivos y negativos en cada lado del punto de división.
+
+La división de valores es la parte más costosa de las aplicaciones de los árboles de decisión.
+
+Dos estrategias comúnes de elección de puntos de división son:
+
+- División binaria:
+
+En la división binaria, el árbol elige un umbral y divide los datos en dos grupos: aquellos cuyos valores son mayores que el umbral y aquellos cuyos valores son iguales o menores que el umbral. Esta estrategia se repite en cada nodo del árbol, dividiendo recursivamente los conjuntos de datos en subconjuntos más pequeños.
+
+- Selección de umbrales:
+
+En lugar de realizar una única división binaria en cada nodo, se pueden probar varios umbrales en busca del mejor. El árbol evalúa diferentes umbrales para cada atributo y selecciona el umbral que optimiza algún criterio de división, como la reducción de impureza (en el caso de la clasificación) o la reducción de la varianza (en el caso de la regresión).
+
+Fuentes: 
+
+- https://chat.openai.com
+- Artificial Inteligence: a Modern Approach 3ra Edición, Cap. 18
